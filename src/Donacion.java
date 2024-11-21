@@ -10,6 +10,7 @@ public class Donacion {
     }
 
     //----------- getters ------------
+
     public float getCantidad() {
         return cantidad;
     }
@@ -18,7 +19,8 @@ public class Donacion {
         return fecha;
     }
 
-    //----------- setters ------------
+    //----------- setters -------------
+    
     public void setCantidad(float cantidad) {
         this.cantidad = cantidad;
     }

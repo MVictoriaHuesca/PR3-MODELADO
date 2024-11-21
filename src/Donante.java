@@ -1,14 +1,14 @@
-import java.util.LinkedList;
-import java.util.List;
 import java.util.*;
 
 public class Donante extends Socio{
     private List<Donacion> donaciones;
 
-    public Donante(Date registro) {
-        super(registro);
+    public Donante(Date registro, Refugio refugio) {
+        super(registro, refugio);
         this.donaciones = new LinkedList<Donacion>();
     }
+
+//----------getters/setters--------------
 
     public List<Donacion> getDonaciones() {
         return donaciones;
@@ -18,8 +18,17 @@ public class Donante extends Socio{
         this.donaciones = donaciones;
     }
 
-    private void agregarDonacion(Donacion donacion) {
+    public void agregarDonacion(Donacion donacion) {
         donaciones.add(donacion);
+    }
+
+//-----------Métodos-------------
+    public void donar(float c){
+        Donacion donacion = new Donacion(c,new Date());
+        agregarDonacion(donacion);
+        //Falta agregar liquidez al refugio
+        Refugio ref=super.getRefugio();
+        ref.setLiquidez(ref.getLiquidez()+c);
     }
 
 }

@@ -4,14 +4,17 @@ public class Adopcion {
     private Date fecha;
     Animal animal;
     Adoptante adoptante;
+    Voluntario voluntario;
+    
 
-    public Adopcion(Date fechaAdop, Animal a, Adoptante adop){
+    public Adopcion(Date fechaAdop, Animal a, Adoptante adop, Voluntario v){
         this.fecha=fechaAdop;
         this.animal=a;
         this.adoptante=adop;
+        this.voluntario=v;
     }
 
-//----------getters/setters--------------
+//-------------getters---------------
      public Date getFecha(){
         return fecha;
     }
@@ -24,6 +27,11 @@ public class Adopcion {
         return adoptante;
     }
 
+    public Voluntario getVoluntario(){
+        return voluntario;
+    }
+///---------------setters--------------
+
     public void setFecha(Date fechaAdop){
         this.fecha=fechaAdop;
     }
@@ -34,6 +42,10 @@ public class Adopcion {
 
     public void setAdoptante(Adoptante adop){
         this.adoptante=adop;
+    }
+
+    public void setVoluntario(Voluntario v){
+        this.voluntario=v;
     }
 
 //-----------funciones----------------------

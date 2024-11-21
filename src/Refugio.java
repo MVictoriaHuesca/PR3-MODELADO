@@ -5,16 +5,18 @@ public class Refugio{
     private float liquidez;
     private List<Animal> animalesRegistrados;
     private List<Animal> animalesRefugiados;
+    private List<Socio> sociosRefugio;
 
     public Refugio(float liquidez) {
         this.liquidez = liquidez;
         this.animalesRegistrados = new ArrayList<>();
         this.animalesRefugiados = new ArrayList<>();
+        this.sociosRefugio = new ArrayList<>();
     }
 
 //----------getters/setters--------------
 
-    public double getLiquidez() {
+    public float getLiquidez() {
         return liquidez;
     }
 
@@ -30,23 +32,30 @@ public class Refugio{
         return animalesRefugiados;
     }
 
-//----------métodos--------------
-
-    public void registrarAnimal(Animal a) {
-        animalesRegistrados.add(a);
-        if (a.getEstado() == EstadoAnimal.DISPONIBLE) {
-            animalesRefugiados.add(a);
-        }
-        System.out.println("Animal registrado: " + a);
+    public List<Socio> getSociosRefugio() {
+        return sociosRefugio;
     }
 
-    public void adoptarAnimal(Animal a) {
+//----------métodos--------------
+
+    public void registrar(Animal a) {
+        animalesRegistrados.add(a);
+        animalesRefugiados.add(a);
+        a.setEstado(EstadoAnimal.DISPONIBLE);        
+        System.out.println("Animal registrado correctamente.");
+    }
+
+    /* QUÉ HACE ESTO AQUI?
+    public void adoptar(Animal a) {
         if (animalesRefugiados.contains(a)) {
             animalesRefugiados.remove(a);
-            a.setEstadoAnimal(EstadoAnimal.ADOPTADO);
-            System.out.println("Animal adoptado: " + a);
+            a.setEstado(EstadoAnimal.ADOPTADO);
+            System.out.println("Animal adoptado");
         } else {
             System.out.println("El animal no está disponible para adopción.");
         }
     }
+    */
+
+    
 }
