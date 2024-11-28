@@ -5,6 +5,7 @@ public class Socio {
     private Refugio refugio;
 
     public Socio(Date registro, Refugio refugio){
+        
         this.registro = registro;
         this.refugio = refugio;
     }
@@ -15,17 +16,15 @@ public class Socio {
         return registro;
     }
 
-    public Refugio getRefugio() {
+    public void setRegistro(Date registro) {
+        this.registro = registro;
+    }  
+
+    public Refugio getRefugio(){
         return refugio;
     }
 
-    public void setRefugio(Refugio refugio) {
+    public void setRefugio(Refugio refugio){
         this.refugio = refugio;
     }
-
-    public void setRegistro(Date registro) {
-        this.registro = registro;
-    } 
-    
-
 }

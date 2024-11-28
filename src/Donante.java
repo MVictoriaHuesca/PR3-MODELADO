@@ -27,7 +27,7 @@ public class Donante extends Socio{
         Donacion donacion = new Donacion(c,new Date());
         agregarDonacion(donacion);
         //Falta agregar liquidez al refugio
-        Refugio ref=super.getRefugio();
+        Refugio ref = this.getRefugio();
         ref.setLiquidez(ref.getLiquidez()+c);
     }
 

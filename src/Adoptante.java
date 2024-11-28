@@ -8,12 +8,8 @@ public class Adoptante extends Socio {
     
 
     public Adoptante (Date registro, Refugio refugio){
-        super(registro, refugio);
+        super(registro, refugio);      
         adopciones=new LinkedList<Adopcion>();
-        /*
-        Adopcion adop = new Adopcion(fechaadop,a,this,v);
-        adopciones.add(adop);
-        */
     }
 
 //----------getters/setters--------------
@@ -24,13 +20,14 @@ public class Adoptante extends Socio {
     }
 
     public void setAdopciones(List<Adopcion> adop){
-        this.adopciones=adop;
+        this.adopciones = adop;
     }
 
 //---------funciones-----------------------
     public void adoptar(Animal a, Voluntario v){
          if (a.getEstado() == EstadoAnimal.DISPONIBLE) {
-            Adopcion adop=new Adopcion( a ,this, v);
+            Date fecha = new Date();
+            Adopcion adop = new Adopcion(fecha, a ,this, v);
             v.tramitarAdopcion(this, a);
             adopciones.add(adop);
             a.setAdopcion(adop);
