@@ -2,8 +2,8 @@ import java.util.*;
 
 public class Adopcion {
     private Date fecha;
-    Animal animal;
-    Adoptante adoptante;
+    private Animal animal;
+    private Adoptante adoptante;
     Voluntario voluntario;
     
 
@@ -13,6 +13,7 @@ public class Adopcion {
         this.animal=a;
         this.adoptante=adop;
         this.voluntario=v;
+        System.err.println("Adopcion creada.");
     }
 
 //-------------getters---------------
@@ -52,7 +53,4 @@ public class Adopcion {
         assert(v!=null);
         this.voluntario=v;
     }
-
-//-----------funciones----------------------
-    
 }

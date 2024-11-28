@@ -7,11 +7,12 @@ public class Refugio{
     private List<Animal> animalesRefugiados;
     private List<Socio> sociosRefugio;
 
-    public Refugio(float liquidez) {
-        this.liquidez = liquidez;
+    public Refugio() {
+        this.liquidez = 0;
         this.animalesRegistrados = new ArrayList<>();
         this.animalesRefugiados = new ArrayList<>();
         this.sociosRefugio = new ArrayList<>();
+        System.out.println("Se ha creado el refugio correctamente.");
     }
 
 //----------getters/setters--------------
@@ -42,7 +43,7 @@ public class Refugio{
         animalesRegistrados.add(a);
         animalesRefugiados.add(a);
         a.setEstado(EstadoAnimal.DISPONIBLE);        
-        System.out.println("Animal registrado correctamente.");
+        System.out.println("Animal registrado correctamente en el refugio.");
     }
 
     /* QUÉ HACE ESTO AQUI?

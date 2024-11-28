@@ -11,9 +11,9 @@ public class Voluntario extends Socio {
             a.setEstado(EstadoAnimal.ADOPTADO);
             this.getRefugio().getAnimalesRefugiados().remove(a); // Probar si así funciona el borrar animal de la lista de refugiados
             
-            System.out.println("Adopción registrada: Se ha adoptado al animal.");
+            System.out.println("Adopción registrada: Se ha adoptado al animal. Estado actual del animal: " + a.getEstado());
         } else {
-            System.out.println("El animal no está disponible para adopción.");
+            System.out.println("El animal no está disponible para adopción. Estado actual del animal: " + a.getEstado());
         }
     }
 

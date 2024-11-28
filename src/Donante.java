@@ -6,6 +6,7 @@ public class Donante extends Socio{
     public Donante(Date registro, Refugio refugio) {
         super(registro, refugio);
         this.donaciones = new LinkedList<Donacion>();
+        System.err.println("Donante creado.");
     }
 
 //----------getters/setters--------------
@@ -18,7 +19,7 @@ public class Donante extends Socio{
         this.donaciones = donaciones;
     }
 
-    public void agregarDonacion(Donacion donacion) {
+    private void agregarDonacion(Donacion donacion) {
         donaciones.add(donacion);
     }
 
@@ -29,6 +30,8 @@ public class Donante extends Socio{
         //Falta agregar liquidez al refugio
         Refugio ref = this.getRefugio();
         ref.setLiquidez(ref.getLiquidez()+c);
+        System.out.println("Donación realizada. Donacion: " + c);
+        System.out.println("Nueva liquidez del refugio: " + ref.getLiquidez());
     }
 
 }
