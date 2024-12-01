@@ -44,12 +44,12 @@ public class Adopcion {
         this.animal=a;
     }
 
-    private void setAdoptante(Adoptante adop){
+    private void setAdoptante(Socio adop){
         assert(adop!=null);
         this.adoptante=adop;
     }
 
-    private void setVoluntario(Voluntario v){
+    private void setVoluntario(Socio v){
         assert(v!=null);
         this.voluntario=v;
     }

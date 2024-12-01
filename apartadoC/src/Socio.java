@@ -145,15 +145,10 @@ public class Socio {
         assert(a != null && v != null);
         if(esAdoptante) {
             if(a.getEstado() == EstadoAnimal.DISPONIBLE) {
-                Date fecha = new Date();
-                Adopcion adop = new Adopcion(fecha, a ,this, v);
                 v.tramitarAdopcion(this, a);
-                adopciones.add(adop);
-                a.setAdopcion(adop);
-                System.out.println("Adopción realizada correctamente por el adoptante: " + this + " del animal: " + a);
             }else{
                 System.err.println("Animal no disponible");
-            }
+            } 
         } else {
             System.out.println("El socio no tiene permisos para adoptar animales.");
         }           
