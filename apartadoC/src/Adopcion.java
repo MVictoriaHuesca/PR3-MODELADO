@@ -3,11 +3,11 @@ import java.util.*;
 public class Adopcion {
     private Date fecha;
     private Animal animal;
-    private Adoptante adoptante;
-    Voluntario voluntario;
+    private Socio adoptante;
+    private Socio voluntario;
     
 
-    public Adopcion(Date fechaAdop, Animal a, Adoptante adop, Voluntario v){
+    public Adopcion(Date fechaAdop, Animal a, Socio adop, Socio v){
         assert(fechaAdop!=null && a!=null && adop!=null && v!=null);
         this.fecha=fechaAdop;
         this.animal=a;
@@ -25,11 +25,11 @@ public class Adopcion {
         return animal;
     }
 
-    private Adoptante getAdoptante(){
+    private Socio getAdoptante(){
         return adoptante;
     }
 
-    private Voluntario getVoluntario(){
+    private Socio getVoluntario(){
         return voluntario;
     }
 ///---------------setters--------------

@@ -26,12 +26,9 @@ public class Adoptante extends Socio {
 
     //---------funciones-----------------------
     public void adoptar(Animal a, Voluntario v){
+        assert(a != null && v != null);
          if(a.getEstado() == EstadoAnimal.DISPONIBLE) {
-            Date fecha = new Date();
-            Adopcion adop = new Adopcion(fecha, a ,this, v);
             v.tramitarAdopcion(this, a);
-            adopciones.add(adop);
-            a.setAdopcion(adop);
          }else{
             System.err.println("Animal no disponible");
          }       

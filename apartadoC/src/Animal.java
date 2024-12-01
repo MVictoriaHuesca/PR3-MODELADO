@@ -12,7 +12,7 @@ public class Animal {
         this.estado = null;
         this.adopcion = null;
         this.refugioRegistrado = refugio;
-        System.out.println("El animal se ha creado correctamente con la fecha de nacimiento: " + this.nacimiento + " y se ha registrado en el refugio.");
+        System.out.println("El animal se ha creado correctamente con la fecha de nacimiento: " + this.nacimiento);
         this.refugioRegistrado.registrar(this);
     }
 
@@ -25,10 +25,13 @@ public class Animal {
         return estado;
     }
 
+    private Refugio getRefugioRegistrado(){
+        return this.refugioRegistrado;
+    }
+
     private Adopcion getAdopcion(){
         return this.adopcion;
     }
-
     //----------- setters -----------
     private void setNacimiento(Date nacimiento){
         assert(nacimiento != null);
@@ -43,10 +46,6 @@ public class Animal {
     public void setAdopcion(Adopcion adopcion){
         assert(adopcion != null);
         this.adopcion = adopcion;
-    }
-
-    private Refugio getRefugioRegistrado(){
-        return this.refugioRegistrado;
     }
 
     private void setRefugioRegistrado(Refugio refugio){

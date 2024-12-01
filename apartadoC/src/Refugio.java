@@ -48,5 +48,17 @@ public class Refugio{
         System.out.println("Animal registrado correctamente en el refugio.");
     }
 
+    /* QUÉ HACE ESTO AQUI?
+    public void adoptar(Animal a) {
+        if (animalesRefugiados.contains(a)) {
+            animalesRefugiados.remove(a);
+            a.setEstado(EstadoAnimal.ADOPTADO);
+            System.out.println("Animal adoptado");
+        } else {
+            System.out.println("El animal no está disponible para adopción.");
+        }
+    }
+    */
+
     
 }

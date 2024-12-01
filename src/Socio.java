@@ -5,26 +5,28 @@ public class Socio {
     private Refugio refugio;
 
     public Socio(Date registro, Refugio refugio){
-        
+        assert(registro != null && refugio != null);
         this.registro = registro;
         this.refugio = refugio;
     }
 
 //----------getters/setters--------------
 
-    public Date getRegistro() {
+    private Date getRegistro() {
         return registro;
     }
 
-    public void setRegistro(Date registro) {
+    private void setRegistro(Date registro) {
+        assert(registro != null);
         this.registro = registro;
     }  
 
-    public Refugio getRefugio(){
+    protected Refugio getRefugio(){
         return refugio;
     }
 
-    public void setRefugio(Refugio refugio){
+    private void setRefugio(Refugio refugio){
+        assert(refugio != null);
         this.refugio = refugio;
     }
 }

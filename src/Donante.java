@@ -15,16 +15,19 @@ public class Donante extends Socio{
         return donaciones;
     }
 
-    public void setDonaciones(List<Donacion> donaciones){
+    private void setDonaciones(List<Donacion> donaciones){
+        assert(donaciones != null);
         this.donaciones = donaciones;
     }
 
     private void agregarDonacion(Donacion donacion) {
+        assert(donacion != null);
         donaciones.add(donacion);
     }
 
 //-----------Métodos-------------
     public void donar(float c){
+        assert(c > 0);
         Donacion donacion = new Donacion(c,new Date());
         agregarDonacion(donacion);
         //Falta agregar liquidez al refugio
