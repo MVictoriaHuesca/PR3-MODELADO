@@ -1,10 +1,11 @@
 import java.util.*;
+import java.time.LocalDate;
 
 public class Donacion {
     private float cantidad;
-    private Date fecha;
+    private LocalDate fecha;
 
-    public Donacion(float cantidad, Date fecha) {
+    public Donacion(float cantidad, LocalDate fecha) {
         assert(fecha != null && cantidad > 0);
         this.cantidad = cantidad;
         this.fecha = fecha;
@@ -17,7 +18,7 @@ public class Donacion {
         return cantidad;
     }
 
-    private Date getFecha() {
+    private LocalDate getFecha() {
         return fecha;
     }
 
@@ -28,7 +29,7 @@ public class Donacion {
         this.cantidad = cantidad;
     }
 
-    private void setFecha(Date fecha) {
+    private void setFecha(LocalDate fecha) {
         assert(fecha != null);
         this.fecha = fecha;
     }

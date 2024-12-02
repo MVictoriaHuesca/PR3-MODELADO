@@ -3,16 +3,16 @@ import java.util.*;
 public class Adopcion {
     private Date fecha;
     private Animal animal;
-    private Socio adoptante;
-    private Socio voluntario;
+    private Adoptante adoptante;
+    private Voluntario voluntario;
     
 
-    public Adopcion(Date fechaAdop, Animal a, Socio adop, Socio v){
-        assert(fechaAdop!=null && a!=null && adop!=null && v!=null);
+    public Adopcion(Date fechaAdop, Animal a, Adoptante ad, Voluntario voluntario){
+        assert(fechaAdop!=null && a!=null && ad!=null && voluntario!=null);
         this.fecha=fechaAdop;
         this.animal=a;
-        this.adoptante=adop;
-        this.voluntario=v;
+        this.adoptante=ad;
+        this.voluntario=voluntario;
         System.err.println("Adopcion creada.");
     }
 
@@ -25,11 +25,11 @@ public class Adopcion {
         return animal;
     }
 
-    private Socio getAdoptante(){
+    private Adoptante getAdoptante(){
         return adoptante;
     }
 
-    private Socio getVoluntario(){
+    private Voluntario getVoluntario(){
         return voluntario;
     }
 ///---------------setters--------------
@@ -44,12 +44,12 @@ public class Adopcion {
         this.animal=a;
     }
 
-    private void setAdoptante(Socio adop){
+    private void setAdoptante(Adoptante adop){
         assert(adop!=null);
         this.adoptante=adop;
     }
 
-    private void setVoluntario(Socio v){
+    private void setVoluntario(Voluntario v){
         assert(v!=null);
         this.voluntario=v;
     }

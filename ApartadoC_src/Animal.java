@@ -1,23 +1,24 @@
 import java.util.*;
+import java.time.LocalDate;
 
 public class Animal {
-    private Date nacimiento;
+    private LocalDate nacimiento;
     private EstadoAnimal estado;
     private Adopcion adopcion;
     private Refugio refugioRegistrado;
 
-    public Animal (Date nacimiento, Refugio refugio){
+    public Animal (LocalDate nacimiento, Refugio refugio){
         assert(nacimiento != null && refugio != null);
         this.nacimiento = nacimiento;
         this.estado = null;
         this.adopcion = null;
         this.refugioRegistrado = refugio;
-        System.out.println("El animal se ha creado correctamente con la fecha de nacimiento: " + this.nacimiento);
+        System.out.println("El animal se ha creado correctamente con la fecha de nacimiento: " + this.nacimiento + " y se ha registrado en el refugio.");
         this.refugioRegistrado.registrar(this);
     }
 
     //----------- getters -----------
-    private Date getNacimiento(){
+    private LocalDate getNacimiento(){
         return nacimiento;
     }
 
@@ -25,15 +26,12 @@ public class Animal {
         return estado;
     }
 
-    private Refugio getRefugioRegistrado(){
-        return this.refugioRegistrado;
-    }
-
     private Adopcion getAdopcion(){
         return this.adopcion;
     }
+
     //----------- setters -----------
-    private void setNacimiento(Date nacimiento){
+    private void setNacimiento(LocalDate nacimiento){
         assert(nacimiento != null);
         this.nacimiento = nacimiento;
     }
@@ -46,6 +44,10 @@ public class Animal {
     public void setAdopcion(Adopcion adopcion){
         assert(adopcion != null);
         this.adopcion = adopcion;
+    }
+
+    private Refugio getRefugioRegistrado(){
+        return this.refugioRegistrado;
     }
 
     private void setRefugioRegistrado(Refugio refugio){
