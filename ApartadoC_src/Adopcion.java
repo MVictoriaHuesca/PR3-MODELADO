@@ -1,14 +1,16 @@
 import java.util.*;
 
 public class Adopcion {
+    // Atributo de la clase
     private Date fecha;
+    // Variables que representan las relaciones
     private Animal animal;
     private Adoptante adoptante;
     private Voluntario voluntario;
     
-
+    // Constructor
     public Adopcion(Date fechaAdop, Animal a, Adoptante ad, Voluntario voluntario){
-        assert(fechaAdop!=null && a!=null && ad!=null && voluntario!=null);
+        assert(fechaAdop!=null && a!=null && ad!=null && voluntario!=null); // Nos aseguramos de que ninguno de los parámetros sea nulo
         this.fecha=fechaAdop;
         this.animal=a;
         this.adoptante=ad;

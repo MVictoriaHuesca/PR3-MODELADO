@@ -45,7 +45,7 @@ public class Main {
         try {
             donante.getAdoptante().adoptar(animal4, voluntario.getVoluntario());
         } catch (Exception e) {
-            System.out.println("ERROR: Este socio no tiene permisos de Adoptante");
+            System.out.println("ERROR: Este socio no puede adoptar porque no tiene permisos de Adoptante");
         }
         
         System.out.println(donante.getRoles()+"\n");

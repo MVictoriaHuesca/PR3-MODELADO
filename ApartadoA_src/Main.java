@@ -8,11 +8,12 @@ public class Main {
         LocalDate fecha3 = LocalDate.of(2022,12,25);
         Refugio refugio = new Refugio();
         System.out.println();
+
         //Creamos un animal y un adoptante
         Animal animal = new Animal(fecha2, refugio);        
         Animal animal2 = new Animal(fecha3, refugio);
-        System.out.println("Numero total de animales en el refugio: " + refugio.getAnimalesRegistrados().size());
-        System.out.println();
+        System.out.println("Número total de animales en el refugio: " + refugio.getAnimalesRegistrados().size() + "\n");
+        
         Adoptante adoptante = new Adoptante(fecha, refugio);
         Adoptante adoptante2 = new Adoptante(fecha, refugio);
         Voluntario voluntario = new Voluntario(fecha, refugio);
@@ -20,16 +21,15 @@ public class Main {
         adoptante.adoptar(animal, voluntario);         
         adoptante.adoptar(animal2, voluntario); 
         System.out.println("Número de adopciones del adoptante1: " + adoptante.getAdopciones().size());
-        System.out.println("Número de animales refugiados: " + refugio.getAnimalesRefugiados().size());
-        System.out.println();
+        System.out.println("Número de animales refugiados: " + refugio.getAnimalesRefugiados().size() + "\n");
+        
         adoptante2.adoptar(animal, voluntario);
-        System.out.println("Número de adopciones del adoptante2: " + adoptante2.getAdopciones().size()); // Esta va a salir null
-        System.out.println();
+        System.out.println("Número de adopciones del adoptante2: " + adoptante2.getAdopciones().size() + "\n"); 
+        
         Donante donante = new Donante(fecha, refugio);
         donante.donar(950);
         System.out.println();
         donante.donar(50);
-        System.out.println("Número total de donaciones del donante1: " + donante.getDonaciones().size()); 
-        System.out.println();
+        System.out.println("Número total de donaciones del donante1: " + donante.getDonaciones().size() + "\n"); 
     }
 }

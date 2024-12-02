@@ -2,11 +2,15 @@ import java.time.LocalDate;
 import java.util.*;
 
 public class Socio {
+    // Atributo de la clase
     private LocalDate registro;
+
+    // Variables que representan las relaciones
     private Refugio refugio;
 
+    // Contructor
     public Socio(LocalDate fecha, Refugio refugio){
-        assert(fecha != null && refugio != null);
+        assert(fecha != null && refugio != null); // Nos aseguramos de que ni la fecha ni el refugio sean nulos
         this.registro = fecha;
         this.refugio = refugio;
     }

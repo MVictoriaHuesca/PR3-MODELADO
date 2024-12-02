@@ -1,19 +1,23 @@
 import java.time.LocalDate;
 
 public class Animal {
+    // Atributos de la clase
     private LocalDate nacimiento;
     private EstadoAnimal estado;
+
+    // Variables que representan las relaciones
     private Adopcion adopcion;
     private Refugio refugioRegistrado;
 
+    // Constructor
     public Animal (LocalDate fecha, Refugio refugio){
-        assert(fecha != null && refugio != null);
+        assert(fecha != null && refugio != null); // Nos aseguramos de que ninguno de los parámetros sea nulo   
         this.nacimiento = fecha;
         this.estado = null;
         this.adopcion = null;
         this.refugioRegistrado = refugio;
         System.out.println("El animal se ha creado correctamente con la fecha de nacimiento: " + this.nacimiento + " y se ha registrado en el refugio.");
-        this.refugioRegistrado.registrar(this);
+        this.refugioRegistrado.registrar(this); // Registramos el animal en el refugio
     }
 
     //----------- getters -----------
@@ -21,7 +25,7 @@ public class Animal {
         return nacimiento;
     }
 
-    public EstadoAnimal getEstado(){
+    public EstadoAnimal getEstado(){ // Visibilidad pública para que se le pueda llamar desde otras clases
         return estado;
     }
 
