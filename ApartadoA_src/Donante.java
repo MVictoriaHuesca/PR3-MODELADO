@@ -1,12 +1,13 @@
+import java.time.LocalDate;
 import java.util.*;
 
 public class Donante extends Socio{
     private List<Donacion> donaciones;
 
-    public Donante(Date registro, Refugio refugio) {
-        super(registro, refugio);
+    public Donante(LocalDate fecha, Refugio refugio) {
+        super(fecha, refugio);
         this.donaciones = new LinkedList<Donacion>();
-        System.err.println("Donante creado.");
+        System.out.println("Donante creado.");
     }
 
 //----------getters/setters--------------
@@ -28,7 +29,7 @@ public class Donante extends Socio{
 //-----------Métodos-------------
     public void donar(float c){
         assert(c > 0);
-        Donacion donacion = new Donacion(c,new Date());
+        Donacion donacion = new Donacion(c,LocalDate.now());
         agregarDonacion(donacion);
         //Falta agregar liquidez al refugio
         Refugio ref = this.getRefugio();

@@ -1,9 +1,10 @@
+import java.time.LocalDate;
 import java.util.*;
 
 public class Voluntario extends Socio {
     
-    public Voluntario(Date registro, Refugio refugio) {
-        super(registro, refugio);
+    public Voluntario(LocalDate fecha, Refugio refugio) {
+        super(fecha, refugio);
     }
 
     public void tramitarAdopcion(Adoptante ad, Animal a) {

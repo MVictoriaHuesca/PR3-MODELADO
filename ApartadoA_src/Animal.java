@@ -1,14 +1,14 @@
-import java.util.*;
+import java.time.LocalDate;
 
 public class Animal {
-    private Date nacimiento;
+    private LocalDate nacimiento;
     private EstadoAnimal estado;
     private Adopcion adopcion;
     private Refugio refugioRegistrado;
 
-    public Animal (Date nacimiento, Refugio refugio){
-        assert(nacimiento != null && refugio != null);
-        this.nacimiento = nacimiento;
+    public Animal (LocalDate fecha, Refugio refugio){
+        assert(fecha != null && refugio != null);
+        this.nacimiento = fecha;
         this.estado = null;
         this.adopcion = null;
         this.refugioRegistrado = refugio;
@@ -17,7 +17,7 @@ public class Animal {
     }
 
     //----------- getters -----------
-    private Date getNacimiento(){
+    private LocalDate getNacimiento(){
         return nacimiento;
     }
 
@@ -30,7 +30,7 @@ public class Animal {
     }
 
     //----------- setters -----------
-    private void setNacimiento(Date nacimiento){
+    private void setNacimiento(LocalDate nacimiento){
         assert(nacimiento != null);
         this.nacimiento = nacimiento;
     }

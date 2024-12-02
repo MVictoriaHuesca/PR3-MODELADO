@@ -1,5 +1,5 @@
 import java.util.List;
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.*;
 
 
@@ -7,10 +7,10 @@ public class Adoptante extends Socio {
     private List<Adopcion>adopciones;
     
 
-    public Adoptante (Date registro, Refugio refugio){
-        super(registro, refugio);      
+    public Adoptante (LocalDate fecha, Refugio refugio){
+        super(fecha, refugio);      
         adopciones = new LinkedList<Adopcion>();
-        System.out.println("Se ha registrado el adoptante correctamente en el sistema, con la fecha de registro: " + registro);
+        System.out.println("Se ha registrado el adoptante correctamente en el sistema, con la fecha de registro: " + fecha);
     }
 
     //----------getters/setters--------------
