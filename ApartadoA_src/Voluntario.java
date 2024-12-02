@@ -12,10 +12,10 @@ public class Voluntario extends Socio {
         if (a.getEstado() == EstadoAnimal.DISPONIBLE) { // Comprobamos que el animal esté disponible para ser adoptado
             Date fecha = new Date();
             Adopcion adop = new Adopcion(fecha, a , ad, this);
-            ad.getAdopciones().add(adop);
+            ad.getAdopciones().add(adop); // Añadimos la adopción a la lista de adopciones del socio adoptante
             a.setAdopcion(adop);
             a.setEstado(EstadoAnimal.ADOPTADO);
-            this.getRefugio().getAnimalesRefugiados().remove(a); // Probar si así funciona el borrar animal de la lista de refugiados
+            this.getRefugio().getAnimalesRefugiados().remove(a); // Eliminamos el animal de la lista de refugiados del refugio
             System.out.println("Adopción registrada: Se ha adoptado al animal. Estado actual del animal: " + a.getEstado());
         } else {
             System.out.println("El animal no está disponible para adopción. Estado actual del animal: " + a.getEstado());

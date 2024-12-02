@@ -20,7 +20,7 @@ public class Adoptante {
         return adopciones;
     }
 
-    public void setAdopciones(List<Adopcion> adop){
+    private void setAdopciones(List<Adopcion> adop){
         assert(adop != null);
         this.adopciones = adop;
     }
