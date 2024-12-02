@@ -40,14 +40,17 @@ public class Socio {
     }
 
     public Adoptante getAdoptante() {
+        assert(adoptante != null);
         return adoptante;
     }
 
     public Donante getDonante() {
+        assert(donante != null);
         return donante;
     }
 
     public Voluntario getVoluntario() {
+        assert(voluntario != null);
         return voluntario;
     }
 
@@ -63,7 +66,7 @@ public class Socio {
         this.refugio = refugio;
     }
 
-    private void setAdoptante(boolean rolAdoptante){
+    public void setRolAdoptante(boolean rolAdoptante){
         if(!rolAdoptante){
             this.adoptante = null;
         }
@@ -72,7 +75,7 @@ public class Socio {
         }
     }
 
-    private void setDonante(boolean rolDonante){
+    public void setRolDonante(boolean rolDonante){
         if(!rolDonante){
             this.donante = null;
         }
@@ -81,7 +84,7 @@ public class Socio {
         }
     }
 
-    private void setVoluntario(boolean rolVoluntario){
+    public void setRolVoluntario(boolean rolVoluntario){
         if(!rolVoluntario){
             this.voluntario = null;
         }
@@ -89,4 +92,34 @@ public class Socio {
             this.voluntario = new Voluntario(this);
         }
     }
+
+//--------------- Método getRoles --------------------------
+
+public String getRoles() {
+    StringBuilder roles = new StringBuilder("Los roles que tiene el socio son: ");
+    boolean tieneRol = false;
+
+    // Verificar cada rol
+    if (voluntario != null) {
+        roles.append("Voluntario");
+        tieneRol = true;
+    }
+    if (donante != null) {
+        if (tieneRol) roles.append(", ");  // Agregar coma si ya hay otro rol
+        roles.append("Donante");
+        tieneRol = true;
+    }
+    if (adoptante != null) {
+        if (tieneRol) roles.append(", ");
+        roles.append("Adoptante");
+        tieneRol = true;
+    }
+
+    // Si no tiene ningún rol
+    if (!tieneRol) {
+        roles.append("ninguno");
+    }
+
+    return roles.toString();
+}
 }

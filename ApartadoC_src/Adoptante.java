@@ -25,8 +25,8 @@ public class Adoptante {
     }
 
     //---------funciones-----------------------
-    public void adoptar(Animal a, Voluntario voluntario){
-        assert(a != null && voluntario != null);
+    public void adoptar(Animal a, Voluntario voluntario){        
+        assert(a != null && voluntario != null);        
          if(a.getEstado() == EstadoAnimal.DISPONIBLE) {
             voluntario.tramitarAdopcion(this, a);
          }else{
